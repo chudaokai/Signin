@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.chudk.signin.activity.AddLocationActivity">
+
+    <TextView
+        android:text="位置详情"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+    <TextView
+        android:text="名称："
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAddrMC"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etAddrMC"
+        android:layout_alignBottom="@+id/tvAddrMC"
+        android:layout_toRightOf="@+id/tvAddrMC"
+        android:layout_alignRight="@+id/etBW"
+        android:layout_alignEnd="@+id/etBW" />
+
+    <TextView
+        android:text="经度："
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDJ"
+        android:layout_below="@+id/tvAddrMC"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/etDJ"
+        android:layout_alignBottom="@+id/tvDJ"
+        android:layout_toRightOf="@+id/tvDJ"
+        android:layout_toEndOf="@+id/tvDJ" />
+
+    <TextView
+    android:text="纬度："
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tvBW"
+    android:layout_below="@+id/tvDJ"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/etBW"
+        android:layout_alignBottom="@+id/tvBW"
+        android:layout_toRightOf="@+id/tvBW"
+        android:layout_toEndOf="@+id/tvBW" />
+
+    <TextView
+        android:text="位置："
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAddrMS"
+        android:layout_below="@+id/tvBW"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etAddrMS"
+        android:layout_alignBottom="@+id/tvAddrMS"
+        android:layout_toRightOf="@+id/tvAddrMS"
+        android:layout_alignRight="@+id/etBW"
+        android:layout_alignEnd="@+id/etBW" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启用"
+        android:id="@+id/chkAddrEnable"
+        android:layout_below="@+id/tvAddrMS"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp"
+        android:checked="true" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="保存"
+        android:id="@+id/btnAddSave"
+        android:layout_below="@+id/chkAddrEnable"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="103dp" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:id="@+id/btnAddCancel"
+        android:layout_alignBottom="@+id/btnAddSave"
+        android:layout_toRightOf="@+id/btnAddSave"
+        android:layout_toEndOf="@+id/btnAddSave"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp" />
+
+</RelativeLayout>

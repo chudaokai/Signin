@@ -1,0 +1,5 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context="com.chudk.signin.activity.UserActivity">
+    <item android:id="@+id/action_adduser" android:title="@string/action_adduser"
+        android:orderInCategory="100" android:showAsAction="never" />
+</menu>
