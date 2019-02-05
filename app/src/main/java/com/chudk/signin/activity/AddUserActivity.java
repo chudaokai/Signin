@@ -207,10 +207,16 @@ public class AddUserActivity extends Activity {
         tv1.setText(CurrentUser.getPasswd());//设置参数
         //地址
         Spinner sp = (Spinner)findViewById(R.id.spinnerLocation);
+        boolean f = false;
         for(int i=0;i<m_locList.size();i++){
             if(m_locList.get(i).getName().equals(CurrentUser.getAddr())){
                 sp.setSelection(i);
+                f=true;
+                break;
             }
+        }
+        if(!f){
+            ControlUtil.showDialog(AddUserActivity.this,"未找到位置："+CurrentUser.getAddr());
         }
         //
         CheckBox ch1 = (CheckBox)findViewById(R.id.chkIn);

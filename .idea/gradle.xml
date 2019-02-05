@@ -5,15 +5,15 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="E:\999 Download\003 文档\002 课工厂资料\01开发环境\AndroidStudio\android-studio\gradle\gradle-2.2.1" />
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-4.10.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
 </project>
-

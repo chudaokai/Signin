@@ -80,12 +80,6 @@ public abstract class ALocationEntity implements Serializable {
     public static ALocationEntity createInstance(String name){
         if(null == name || "".equals(name))
             return null;
-        name = name.toUpperCase();
-        if("RZBDC".equals(name)){
-            return new RZBDC();
-        }else if("RZGTJ".equals(name)){
-            return new RZGTJ();
-        }
         return null;
     }
 
