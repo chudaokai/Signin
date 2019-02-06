@@ -81,16 +81,16 @@ public class LocationActivity extends Activity {
                         view=convertView;
                         Log.i("info", "有缓存，不需要重新生成" + position);
                     }
-                    tv1 = (TextView) view.findViewById(R.id.locName);//找到Textviewname
+                    tv1 = view.findViewById(R.id.locName);//找到Textviewname
                     tv1.setText(list.get(position).getName());//设置参数
 
-                    tv1 = (TextView) view.findViewById(R.id.locAddr);//找到Textviewage
+                    tv1 = view.findViewById(R.id.locAddr);//找到Textviewage
                     tv1.setText(list.get(position).getAddr());//设置参数
 
-                    tv1 = (TextView) view.findViewById(R.id.tvLocLng);//找到Textviewage
+                    tv1 = view.findViewById(R.id.tvLocLng);//找到Textviewage
                     tv1.setText(list.get(position).getLng_bd()+"");//设置参数
 
-                    tv1 = (TextView) view.findViewById(R.id.tvLocLat);//找到Textviewage
+                    tv1 = view.findViewById(R.id.tvLocLat);//找到Textviewage
                     tv1.setText(list.get(position).getLat_bd()+"");//设置参数
 
                     return view;

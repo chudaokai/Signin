@@ -1,26 +1,42 @@
 package com.chudk.signin.entity.RequestEntity;
 
 
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.cookie.Cookie;
-import org.apache.http.impl.client.BasicCookieStore;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import okhttp3.Cookie;
 
 public abstract class ARequestEntity implements IRequestEntity {
     private String queryMethod;
     private String queryUrl;
     private Map<String,String> queryString;
     private Map<String,String> queryBody;
-    private BasicCookieStore queryCookies = new BasicCookieStore();
+    private HashMap<String, List<Cookie>> queryCookies = new HashMap<>();
+    private String queryResponse;
+    private int queryResponseState;
 
-    public BasicCookieStore getQueryCookies() {
+    public int getQueryResponseState() {
+        return queryResponseState;
+    }
+
+    public void setQueryResponseState(int queryResponseState) {
+        this.queryResponseState = queryResponseState;
+    }
+
+    public String getQueryResponse() {
+        return queryResponse;
+    }
+
+    public void setQueryResponse(String queryResponse) {
+        this.queryResponse = queryResponse;
+    }
+
+    public HashMap<String, List<Cookie>> getQueryCookies() {
         return queryCookies;
     }
 
-    public void setQueryCookies(BasicCookieStore queryCookies) {
+    public void setQueryCookies(HashMap<String, List<Cookie>> queryCookies) {
         this.queryCookies = queryCookies;
     }
 

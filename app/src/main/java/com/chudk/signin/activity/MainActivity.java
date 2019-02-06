@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.chudk.signin.R;
 import com.chudk.signin.entity.LocalEntity.UserInfo;
 import com.chudk.signin.entity.LocationEntity.CommonLocation;
+import com.chudk.signin.entity.RequestEntity.ARequestEntity;
 import com.chudk.signin.entity.RequestEntity.CheckInRequest;
 import com.chudk.signin.entity.RequestEntity.LoginRequestEntity;
 import com.chudk.signin.entity.ResponseEntity.LoginResponse;
@@ -156,7 +157,8 @@ public class MainActivity extends Activity {
                 String mm = "";
                 try {
                     LoginRequestEntity login = new LoginRequestEntity(_user, _pwd);
-                    String result = HttpUtil.doPost(login);
+                    HttpUtil.doPost(login);
+                    String result = getResponse(login);
                     if(result!=null && result.indexOf("error")>0){
                         mm = _user+" "+_type+" "+result+"\n";
                     }else {
@@ -172,7 +174,8 @@ public class MainActivity extends Activity {
                             checkin.setLatlng(location.getLatlng());
                             checkin.setAddr(location.getAddr());
                             checkin.revalueQueryString();
-                            result = HttpUtil.doGet(checkin);
+                            HttpUtil.doGet(checkin);
+                            result = getResponse(checkin);
                             mm = _user + " " + _type + " " + result + "\n";
                         }
                     }
@@ -183,6 +186,21 @@ public class MainActivity extends Activity {
                 handler.sendMessage(msg);
             }
         }).start();
+    }
+
+    private String getResponse(ARequestEntity requestEntity) {
+        if(requestEntity.getQueryResponseState()>0)
+            return requestEntity.getQueryResponse();
+        while(requestEntity.getQueryResponseState()<=0){
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if(requestEntity.getQueryResponseState()>0)
+                return requestEntity.getQueryResponse();
+        }
+        return null;
     }
 
     @Override
